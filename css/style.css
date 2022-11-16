@@ -7,17 +7,25 @@ body {
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
-    padding: 20px;
+    padding: 0px 20px;
 }
 
 #title {
     text-align: center;
-    margin: 30px;
+    margin: 20px;
     font-weight: 700;
     font-size: 27px;
 }
 
-.container {
+#buttons {
+    display: flex;
+    gap: 25px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid-container {
     display: grid;
     border: 1px solid black;
     height: 500px;
@@ -32,4 +40,25 @@ body {
     margin: 0px;
     padding: 0px;
     display: flex;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    gap: 190px;
+}
+
+.button , .inputBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 3px solid black;
+    height: 4em;
+    width: 10em;
+    border-radius: 3px;
+}
+
+.inputBtn {
+    height: 3.4em;
+    width: 9.3em;
 }
