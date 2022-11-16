@@ -1,18 +1,27 @@
+const DEFAULT_COLOR = '#262626';
+const DEFAULT_SIZE = 16;
+
+let color = DEFAULT_COLOR;
+let size = DEFAULT_SIZE;
+
 const container = document.getElementById('grid');
-container.style.gridTemplateColumns = 'repeat(16,1fr)'
-container.style.gridTemplateRows = 'repeat(16,1fr)'
 
-for (let i = 0; i < 16*16; i++) {
-    const gridItem = document.createElement('div');
-    gridItem.classList.add('grid-item');
+function setGrid() {
+    container.style.gridTemplateColumns = `repeat(${size},1fr)`;
+    container.style.gridTemplateRows = `repeat(${size},1fr)`;
 
-    container.appendChild(gridItem);
+    for (let i = 0; i < size * size; i++) {
+        const gridItem = document.createElement('div');
+        gridItem.classList.add('grid-item');
+        gridItem.addEventListener('mouseover', changeColor)
+        container.appendChild(gridItem);
+    }
 }
 
-const gridElements = document.querySelectorAll('.grid-item');
+const changeColor = (e) => {
+    e.target.style.backgroundColor = color;
+}
 
-gridElements.forEach(element => {
-    element.addEventListener('mouseover',() =>{
-        element.setAttribute('style','background-color: black;border-color: white;');
-    })
-})
+window.onload = () => {
+    setGrid();
+}

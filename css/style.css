@@ -20,16 +20,16 @@ body {
 .container {
     display: grid;
     border: 1px solid black;
-    height: 400px;
-    width: 400px;
+    height: 500px;
+    width: 500px;
     flex: none;
     border: 5px solid black;
-    padding: 0.1px;
+    padding: 1px;
+    border-radius: 7px;
 }
 
 .grid-item {
     margin: 0px;
     padding: 0px;
     display: flex;
-    border: 1px solid black;
 }
