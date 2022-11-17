@@ -17,7 +17,7 @@ const displaySize = document.querySelector('.display');
 const userSize = document.getElementById('userSize');
 
 displaySize.innerHTML = `${size} × ${size}`;
-currentMode.innerHTML = 'Color';
+currentMode.innerHTML = 'Mode: Color';
 
 userSize.oninput = function () {
     displaySize.innerHTML = `${this.value} × ${this.value}`;
@@ -46,11 +46,11 @@ userColor.addEventListener('change', () => {
 // set current mode text in UI
 function setCurrentMode(){
     if(mode === 'colorMode'){
-        currentMode.innerHTML = 'Color';
+        currentMode.innerHTML = `Mode: Color`;
     } else if (mode === 'rainbowMode'){
-        currentMode.innerHTML = 'Rainbow';
+        currentMode.innerHTML = 'Mode: Rainbow';
     } else {
-        currentMode.innerHTML = 'Eraser';
+        currentMode.innerHTML = 'Mode: Eraser';
     }
 }
 
