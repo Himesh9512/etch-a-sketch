@@ -5,6 +5,15 @@ let color = DEFAULT_COLOR;
 let size = DEFAULT_SIZE;
 
 const container = document.getElementById('grid');
+const userColor = document.getElementById('chooseColor');
+
+userColor.addEventListener('change', () => {
+    setColor(userColor.value);
+})
+
+function setColor(userColor){
+    color = userColor;
+}
 
 function setGrid() {
     container.style.gridTemplateColumns = `repeat(${size},1fr)`;

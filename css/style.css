@@ -48,7 +48,7 @@ body {
     gap: 190px;
 }
 
-.button , .inputBtn {
+.button , .input {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -58,7 +58,7 @@ body {
     border-radius: 3px;
 }
 
-.inputBtn {
-    height: 3.4em;
-    width: 9.3em;
+.selected {
+    background-color: black;
+    color: white;
 }
