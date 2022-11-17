@@ -12,13 +12,15 @@
             <div id="grid" class="grid-container"></div> <!--grid-->
             <div id="buttons">
                 <input id="chooseColor" class="input" type="color" value="#ff0000">
+                <div class="currentMode"></div>
                 <select id="selectMode" class="input"> 
                     <option value="colorMode">Color</option>
                     <option value="rainbowMode">Rainbow</option>
                     <option value="eraserMode">Eraser</option>
                 </select>
                 <button id="clearBtn" class="button">Clear</button>
-                <button id="userSize" class="button">Input</button>
+                <div class="display"></div>
+                <input id="userSize" class="input" type="range" max="64" min="1" class="slider" value="16">
             </div>
         </div>
     </body>

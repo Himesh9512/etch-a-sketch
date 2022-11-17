@@ -9,9 +9,26 @@ let mode = DEFAULT_MODE;
 
 const container = document.getElementById('grid');
 const userColor = document.getElementById('chooseColor');
+const currentMode = document.querySelector('.currentMode');
 const userMode = document.getElementById('selectMode');
 const clearBtn = document.getElementById('clearBtn');
 const eraserBtn = document.getElementById('eraserBtn');
+const displaySize = document.querySelector('.display');
+const userSize = document.getElementById('userSize');
+
+displaySize.innerHTML = `${size} × ${size}`;
+currentMode.innerHTML = mode.toLowerCase();
+
+
+userSize.oninput = function () {
+    displaySize.innerHTML = `${this.value} × ${this.value}`;
+}
+
+userSize.addEventListener('change', () => {
+    size = userSize.value;
+    container.innerHTML = '';
+    setGrid();
+})
 
 clearBtn.addEventListener('click', () => {
     container.innerHTML = ''; // clear grid 
@@ -20,12 +37,22 @@ clearBtn.addEventListener('click', () => {
 
 userMode.addEventListener('change', () => {
     mode = userMode.value; // set color modes 
+    setCurrentMode();
 })
 
 userColor.addEventListener('change', () => {
     color = userColor.value; // change draw color 
 })
 
+function setCurrentMode(){
+    if(mode === 'colorMode'){
+        currentMode.innerHTML = 'Color';
+    } else if (mode === 'rainbowMode'){
+        currentMode.innerHTML = 'Rainbow';
+    } else {
+        currentMode.innerHTML = 'Eraser';
+    }
+}
 // create grid elements and add listeners
 function setGrid() {
     container.style.gridTemplateColumns = `repeat(${size},1fr)`;
@@ -56,4 +83,5 @@ const changeColor = (e) => {
 
 window.onload = () => {
     setGrid();
+    setDisplayGridSize();
 }

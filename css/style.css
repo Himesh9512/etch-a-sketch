@@ -25,6 +25,10 @@ body {
     align-items: center;
 }
 
+#userSize {
+    height: 20px;
+}
+
 .grid-container {
     display: grid;
     border: 1px solid black;
@@ -61,4 +65,8 @@ body {
 .button:hover {
     background-color: #232323;
     color: white;
+}
+
+.display , .currentMode {
+    font-size: 23px;
 }
