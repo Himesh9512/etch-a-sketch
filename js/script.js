@@ -17,6 +17,7 @@ const displaySize = document.querySelector('.display');
 const userSize = document.getElementById('userSize');
 
 displaySize.innerHTML = `${size} × ${size}`;
+currentMode.innerHTML = 'Color';
 
 userSize.oninput = function () {
     displaySize.innerHTML = `${this.value} × ${this.value}`;
@@ -83,5 +84,4 @@ const changeColor = (e) => {
 
 window.onload = () => {
     setGrid();
-    setDisplayGridSize();
 }

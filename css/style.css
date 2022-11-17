@@ -15,6 +15,7 @@ body {
     margin: 20px;
     font-weight: 700;
     font-size: 27px;
+    align-self: start;
 }
 
 #buttons {
@@ -49,7 +50,7 @@ body {
 .container {
     display: flex;
     flex-direction: row;
-    gap: 190px;
+    gap: 160px;
 }
 
 .button , .input {
