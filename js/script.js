@@ -1,6 +1,7 @@
 const DEFAULT_COLOR = '#262626';
 const DEFAULT_SIZE = 16;
 const DEFAULT_MODE = 'colorMode';
+// default value's applied when page is loaded
 
 let color = DEFAULT_COLOR;
 let size = DEFAULT_SIZE;
@@ -9,23 +10,22 @@ let mode = DEFAULT_MODE;
 const container = document.getElementById('grid');
 const userColor = document.getElementById('chooseColor');
 const userMode = document.getElementById('selectMode');
+const clearBtn = document.getElementById('clearBtn');
+
+clearBtn.addEventListener('click', () => {
+    container.innerHTML = ''; // clear grid 
+    setGrid();
+})
 
 userMode.addEventListener('change', () => {
-    setMode(userMode.value);
+    mode = userMode.value; // set color modes 
 })
 
 userColor.addEventListener('change', () => {
-    setColor(userColor.value);
+    color = userColor.value; // change draw color 
 })
 
-function setColor(userColor) {
-    color = userColor;
-}
-
-function setMode(userMode){
-    mode = userMode;
-}
-
+// create grid elements and add listeners
 function setGrid() {
     container.style.gridTemplateColumns = `repeat(${size},1fr)`;
     container.style.gridTemplateRows = `repeat(${size},1fr)`;
@@ -38,6 +38,7 @@ function setGrid() {
     }
 }
 
+// first check the mode and then change the color of grid elements when mouse is passed through it 
 const changeColor = (e) => {
     if (mode === 'rainbowMode') {
         let red = Math.floor(Math.random() * 256);

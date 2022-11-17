@@ -57,3 +57,8 @@ body {
     width: 10em;
     border-radius: 3px;
 }
+
+.button:hover {
+    background-color: #232323;
+    color: white;
+}
