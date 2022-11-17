@@ -17,8 +17,6 @@ const displaySize = document.querySelector('.display');
 const userSize = document.getElementById('userSize');
 
 displaySize.innerHTML = `${size} × ${size}`;
-currentMode.innerHTML = mode.toLowerCase();
-
 
 userSize.oninput = function () {
     displaySize.innerHTML = `${this.value} × ${this.value}`;
@@ -44,6 +42,7 @@ userColor.addEventListener('change', () => {
     color = userColor.value; // change draw color 
 })
 
+// set current mode text in UI
 function setCurrentMode(){
     if(mode === 'colorMode'){
         currentMode.innerHTML = 'Color';
@@ -53,6 +52,7 @@ function setCurrentMode(){
         currentMode.innerHTML = 'Eraser';
     }
 }
+
 // create grid elements and add listeners
 function setGrid() {
     container.style.gridTemplateColumns = `repeat(${size},1fr)`;
