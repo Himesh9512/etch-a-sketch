@@ -57,8 +57,3 @@ body {
     width: 10em;
     border-radius: 3px;
 }
-
-.selected {
-    background-color: black;
-    color: white;
-}
