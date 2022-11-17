@@ -11,6 +11,7 @@ const container = document.getElementById('grid');
 const userColor = document.getElementById('chooseColor');
 const userMode = document.getElementById('selectMode');
 const clearBtn = document.getElementById('clearBtn');
+const eraserBtn = document.getElementById('eraserBtn');
 
 clearBtn.addEventListener('click', () => {
     container.innerHTML = ''; // clear grid 
@@ -46,6 +47,8 @@ const changeColor = (e) => {
         let blue = Math.floor(Math.random() * 256);
 
         e.target.style.backgroundColor = `rgb(${red},${green},${blue})`;
+    } else if (mode === 'eraserMode'){
+        e.target.style.backgroundColor = '#ffffff';
     } else {
         e.target.style.backgroundColor = color;
     }
